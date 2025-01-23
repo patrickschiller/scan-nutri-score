@@ -1,6 +1,6 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/patrick/Flutter/scan_nutri_score/scan_nutri_score/build/ios/Release-iphoneos/nanopb/nanopb.framework/nanopb'
+binary-path:     '/Users/patrick/GitHub/scan-nutri-score/build/ios/Release-iphoneos/nanopb/nanopb.framework/nanopb'
 relocations:
   - { offset: 0x3CB6, size: 0x8, addend: 0x0, symName: _nanopbVersionString, symObjAddr: 0x0, symBinAddr: 0x6D08, symSize: 0x0 }
   - { offset: 0x3CEA, size: 0x8, addend: 0x0, symName: _nanopbVersionNumber, symObjAddr: 0x28, symBinAddr: 0x6D30, symSize: 0x0 }

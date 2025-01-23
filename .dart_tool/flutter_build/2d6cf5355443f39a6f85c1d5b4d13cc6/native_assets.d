@@ -1,0 +1,1 @@
+ /Users/patrick/GitHub/scan-nutri-score/.dart_tool/flutter_build/2d6cf5355443f39a6f85c1d5b4d13cc6/native_assets.yaml: 

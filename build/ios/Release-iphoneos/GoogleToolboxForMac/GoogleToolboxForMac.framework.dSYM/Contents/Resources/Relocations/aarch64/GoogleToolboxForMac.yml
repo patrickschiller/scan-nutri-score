@@ -1,11 +1,11 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/patrick/Flutter/scan_nutri_score/scan_nutri_score/build/ios/Release-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework/GoogleToolboxForMac'
+binary-path:     '/Users/patrick/GitHub/scan-nutri-score/build/ios/Release-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework/GoogleToolboxForMac'
 relocations:
   - { offset: 0x592E7, size: 0x8, addend: 0x0, symName: _GoogleToolboxForMacVersionString, symObjAddr: 0x0, symBinAddr: 0xAA00, symSize: 0x0 }
   - { offset: 0x5931C, size: 0x8, addend: 0x0, symName: _GoogleToolboxForMacVersionNumber, symObjAddr: 0x38, symBinAddr: 0xAA38, symSize: 0x0 }
   - { offset: 0x59359, size: 0x8, addend: 0x0, symName: '+[GTMLogger sharedLogger]', symObjAddr: 0x0, symBinAddr: 0x8000, symSize: 0x68 }
-  - { offset: 0x59378, size: 0x8, addend: 0x0, symName: _gSharedLogger, symObjAddr: 0xBF20, symBinAddr: 0xDFF0, symSize: 0x0 }
+  - { offset: 0x59378, size: 0x8, addend: 0x0, symName: _gSharedLogger, symObjAddr: 0xBEE8, symBinAddr: 0xDFF0, symSize: 0x0 }
   - { offset: 0x59515, size: 0x8, addend: 0x0, symName: '+[GTMLogger sharedLogger]', symObjAddr: 0x0, symBinAddr: 0x8000, symSize: 0x68 }
   - { offset: 0x5954C, size: 0x8, addend: 0x0, symName: '+[GTMLogger setSharedLogger:]', symObjAddr: 0x68, symBinAddr: 0x8068, symSize: 0x5C }
   - { offset: 0x5958F, size: 0x8, addend: 0x0, symName: '+[GTMLogger standardLogger]', symObjAddr: 0xC4, symBinAddr: 0x80C4, symSize: 0xA4 }

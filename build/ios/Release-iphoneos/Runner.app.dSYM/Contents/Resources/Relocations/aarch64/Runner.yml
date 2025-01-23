@@ -1,6 +1,6 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/patrick/Flutter/scan_nutri_score/scan_nutri_score/build/ios/Release-iphoneos/Runner.app/Runner'
+binary-path:     '/Users/patrick/GitHub/scan-nutri-score/build/ios/Release-iphoneos/Runner.app/Runner'
 relocations:
   - { offset: 0x1477B8, size: 0x8, addend: 0x0, symName: _RunnerVersionString, symObjAddr: 0x0, symBinAddr: 0x100A18280, symSize: 0x0 }
   - { offset: 0x1477ED, size: 0x8, addend: 0x0, symName: _RunnerVersionNumber, symObjAddr: 0x28, symBinAddr: 0x100A182A8, symSize: 0x0 }
@@ -158,7 +158,7 @@ relocations:
   - { offset: 0x14EACC, size: 0x8, addend: 0x0, symName: '_$s14mobile_scanner18MobileScannerErrorOs0E0AAsADP9_userInfoyXlSgvgTW', symObjAddr: 0x210, symBinAddr: 0x1009ECEDC, symSize: 0x4 }
   - { offset: 0x14EAE8, size: 0x8, addend: 0x0, symName: '_$s14mobile_scanner18MobileScannerErrorOs0E0AAsADP19_getEmbeddedNSErroryXlSgyFTW', symObjAddr: 0x214, symBinAddr: 0x1009ECEE0, symSize: 0x4 }
   - { offset: 0x14EC1E, size: 0x8, addend: 0x0, symName: '_$s14mobile_scanner19MobileScannerPluginC11returnImage33_312C1E6F1EC041F4677AD2BE3AF3ABADLLSbvpZ', symObjAddr: 0x84B8, symBinAddr: 0x100D23460, symSize: 0x0 }
-  - { offset: 0x14EC38, size: 0x8, addend: 0x0, symName: '_$s14mobile_scanner19MobileScannerPluginC10scanWindowSay12CoreGraphics7CGFloatVGSgvpZ', symObjAddr: 0x24A20, symBinAddr: 0x100D55788, symSize: 0x0 }
+  - { offset: 0x14EC38, size: 0x8, addend: 0x0, symName: '_$s14mobile_scanner19MobileScannerPluginC10scanWindowSay12CoreGraphics7CGFloatVGSgvpZ', symObjAddr: 0x249D8, symBinAddr: 0x100D55788, symSize: 0x0 }
   - { offset: 0x14EC46, size: 0x8, addend: 0x0, symName: '_$syXlSgIeyBy_ypSgIegn_TR', symObjAddr: 0x2C, symBinAddr: 0x1009ECEE8, symSize: 0xE8 }
   - { offset: 0x14EC5A, size: 0x8, addend: 0x0, symName: '_$sSbIegy_SbIeyBy_TR', symObjAddr: 0x114, symBinAddr: 0x1009ECFD0, symSize: 0x3C }
   - { offset: 0x14F449, size: 0x8, addend: 0x0, symName: '_$s14mobile_scanner19MobileScannerPluginCfETo', symObjAddr: 0x34E4, symBinAddr: 0x1009F0380, symSize: 0x38 }

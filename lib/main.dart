@@ -156,15 +156,26 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
         ),
         child: Column(
           children: [
-            Expanded(
-              flex: 2,
-              child: MobileScanner(
-                onDetect: (BarcodeCapture capture) {
-                  final barcode = capture.barcodes.first;
-                  if (barcode.rawValue != null) {
-                    handleBarcodeDetection(barcode.rawValue!);
-                  }
-                },
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.2,
+              child: Stack(
+                children: [
+                  MobileScanner(
+                    onDetect: (BarcodeCapture capture) {
+                      final barcode = capture.barcodes.first;
+                      if (barcode.rawValue != null) {
+                        handleBarcodeDetection(barcode.rawValue!);
+                      }
+                    },
+                  ),
+                  Center(
+                    child: Container(
+                      height: 2,
+                      color: Colors.red,
+                      margin: EdgeInsets.symmetric(horizontal: 20),
+                    ),
+                  ),
+                ],
               ),
             ),
             Padding(
@@ -205,7 +216,6 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
             if (isLoading) Center(child: CircularProgressIndicator()),
             if (productData != null)
               Expanded(
-                flex: 3,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: productData!.containsKey('error')
