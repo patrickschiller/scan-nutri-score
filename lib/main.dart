@@ -65,11 +65,16 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   final TextEditingController eanController = TextEditingController();
   bool isScanningAllowed = true;
 
+  final Stopwatch barcodeTimer = Stopwatch();
+  final Stopwatch apiTimer = Stopwatch();
+
   Future<void> fetchProductDetails(String barcode) async {
     setState(() {
       isLoading = true;
       productData = null;
     });
+
+    apiTimer.start();
 
     final apiUrl =
         'https://world.openfoodfacts.org/api/v0/product/$barcode.json?lc=de';
@@ -92,6 +97,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
         productData = {'error': 'Fehler beim Abrufen der Daten'};
       });
     } finally {
+      apiTimer.stop();
       setState(() {
         isLoading = false;
       });
@@ -104,20 +110,36 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       productData = null;
       eanController.clear();
       isScanningAllowed = true;
+      barcodeTimer.reset();
+      apiTimer.reset();
     });
   }
 
   void handleBarcodeDetection(String barcode) {
     if (isScanningAllowed) {
+      barcodeTimer.stop();
+      final barcodeTime = barcodeTimer.elapsedMilliseconds;
+
       setState(() {
         isScanningAllowed = false;
         scannedBarcode = barcode;
       });
-      fetchProductDetails(barcode);
+
+      fetchProductDetails(barcode).then((_) {
+        final apiTime = apiTimer.elapsedMilliseconds;
+        setState(() {
+          productData ??= {};
+          productData!["barcode_detection_time"] = "$barcodeTime ms";
+          productData!["api_fetch_time"] = "$apiTime ms";
+        });
+        apiTimer.reset();
+      });
+
       Future.delayed(Duration(seconds: 1), () {
         setState(() {
           isScanningAllowed = true;
         });
+        barcodeTimer.start();
       });
     }
   }
@@ -138,6 +160,12 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       default:
         return 'assets/images/nutriscore_unknown.png';
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    barcodeTimer.start();
   }
 
   @override
@@ -225,11 +253,22 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                             Text(
                               'Produkt: ${productData!['product_name'] ?? 'Unbekannt'}',
                               style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                                  fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 10),
                             Text(
-                                'Zutaten: ${productData!['ingredients_text'] ?? 'Keine Daten verfügbar'}'),
+                              'Zutaten: ${productData!['ingredients_text'] ?? 'Keine Daten verfügbar'}',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Barcode-Erkennungszeit: ${productData!['barcode_detection_time'] ?? 'Nicht gemessen'}',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                            Text(
+                              'API-Abrufzeit: ${productData!['api_fetch_time'] ?? 'Nicht gemessen'}',
+                              style: TextStyle(fontSize: 14),
+                            ),
                             SizedBox(height: 20),
                             if (productData!['nutriscore_grade'] != null)
                               Column(
