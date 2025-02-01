@@ -2,6 +2,9 @@
 
 A simple Flutter application to scan product barcodes and display their Nutri-Score. 
 
+## Reason
+Just to learn from Flutter from a usable point of view
+
 ## Features
 - Barcode scanning with the device’s camera  
 - Automated API requests to fetch nutrition data  
