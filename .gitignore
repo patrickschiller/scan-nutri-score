@@ -1,1 +1,20 @@
-build/ios/Release-iphoneos/Flutter.framework.dSYM/
+# Betriebssystem-Spezifisches
+.DS_Store
+
+# Logs
+*.log
+
+# Umgebungsdateien
+.env
+.env.*
+
+# Abhängigkeiten
+node_modules/
+
+# Build-Ordner
+dist/
+build/
+
+# Externe Pakete
+*.jar
+*.dll
