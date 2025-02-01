@@ -1,16 +1,26 @@
-# scan_nutri_score
+# Scan Nutri Score
 
-A new Flutter project.
+A simple Flutter application to scan product barcodes and display their Nutri-Score. 
 
-## Getting Started
+## Features
+- Barcode scanning with the device’s camera  
+- Automated API requests to fetch nutrition data  
+- Displays Nutri-Score in a clean, user-friendly interface  
 
-This project is a starting point for a Flutter application.
+## Installation
+1. Clone this repository  
+2. Run `flutter pub get` to install dependencies  
+3. Run `flutter run` to launch the app  
 
-A few resources to get you started if this is your first Flutter project:
+## Usage
+1. Tap the barcode scanner button  
+2. Align the barcode in the camera view  
+3. View the product’s Nutri-Score results  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Contributing
+1. Fork the repository  
+2. Create a feature branch  
+3. Submit a pull request  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+MIT License
