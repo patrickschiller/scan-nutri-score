@@ -15,6 +15,7 @@ node_modules/
 dist/
 build/
 .dart_tool/
+.vscode/
 
 # Externe Pakete
 *.jar
